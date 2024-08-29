@@ -81,10 +81,15 @@
                                                     <td>
                                                         <div class="btn-group" role="group">
 
-                                                            <a href="{{ route('academic-year.edit', $item->id) }}"
-                                                                class="btn btn-primary"
-                                                                style="border-radius:  .25rem 0 0 .25rem 0 !important"><i
-                                                                    class="fa-solid fa-pen-to-square"></i>Edit</a>
+                                                            <form action="{{ route('academic-year.edit') }}" method="POST">
+                                                                @csrf
+                                                                @method('GET')
+                                                                <input type="hidden" name="id"
+                                                                    value="{{ $item->id }}">
+                                                                <button type="submit" class="btn btn-primary"
+                                                                    style="border-radius:  .25rem 0 0 .25rem 0 !important"><i
+                                                                        class="fa-solid fa-pen-to-square"></i>Edit</button>
+                                                            </form>
 
                                                             <form action="{{ route('academic-year.delete', $item->id) }}"
                                                                 method="POST" style="display: inline" id="formdelete">

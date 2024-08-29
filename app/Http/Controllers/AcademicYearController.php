@@ -32,17 +32,17 @@ class AcademicYearController extends Controller
             return redirect()->route('academic-year.read')->with('error', 'Academic Year Create Failed');
         }
     }
-    public function edit(String $id)
+    public function edit(Request $request)
     {
-        $data = AcademicYear::find($id);
+        $data = AcademicYear::find($request->id);
         return view('admin.academic.edit_academic_year', compact('data'));
     }
-    public function update(Request $request, String $id)
+    public function update(Request $request)
     {
         $request->validate([
             'name' => 'required',
         ]);
-        $data = AcademicYear::find($id);
+        $data = AcademicYear::find($request->id);
         $data->name = $request->name;
         $data->update();
         if ($data->update()) {

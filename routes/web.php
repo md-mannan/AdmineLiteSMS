@@ -24,8 +24,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('academic_year/read', [AcademicYearController::class, 'read'])->name('academic-year.read');
         Route::get('academic_year/create', [AcademicYearController::class, 'index'])->name('academic-year.create');
         Route::post('academic_year/create', [AcademicYearController::class, 'store'])->name('academic-year.store');
-        Route::get('academic_year/edit/{id}', [AcademicYearController::class, 'edit'])->name('academic-year.edit');
-        Route::put('academic_year/update/{id}', [AcademicYearController::class, 'update'])->name('academic-year.update');
+        Route::get('academic_year/edit', [AcademicYearController::class, 'edit'])->name('academic-year.edit');
+        Route::put('academic_year/update', [AcademicYearController::class, 'update'])->name('academic-year.update');
         Route::get('academic_year/delete/{id}', [AcademicYearController::class, 'delete'])->name('academic-year.delete');
     });
 });

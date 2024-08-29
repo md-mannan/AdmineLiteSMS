@@ -34,10 +34,11 @@
                             </div>
 
 
-                            <form action="{{ route('academic-year.update', $data->id) }}" method="POST">
+                            <form action="{{ route('academic-year.update') }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="card-body">
+                                    <input type="hidden" name='id' value="{{ $data->id }}">
                                     <div class="form-group">
                                         @if (Session::has('success'))
                                             <div class="alert alert-success">{{ Session::get('success') }}</div>
