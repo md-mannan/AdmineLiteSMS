@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AcademicYearController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('table', [AdminController::class, 'table'])->name('admin.table');
         Route::get('form', [AdminController::class, 'form'])->name('admin.form');
         Route::get('logout', [AdminController::class, 'logout'])->name('admin.logout');
+        Route::get('academic_year/read', [AcademicYearController::class, 'read'])->name('academic-year.read');
+        Route::get('academic_year/create', [AcademicYearController::class, 'index'])->name('academic-year.create');
+        Route::post('academic_year/create', [AcademicYearController::class, 'store'])->name('academic-year.store');
+        Route::get('academic_year/edit/{id}', [AcademicYearController::class, 'edit'])->name('academic-year.edit');
+        Route::put('academic_year/update/{id}', [AcademicYearController::class, 'update'])->name('academic-year.update');
+        Route::get('academic_year/delete/{id}', [AcademicYearController::class, 'delete'])->name('academic-year.delete');
     });
 });

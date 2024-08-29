@@ -1,8 +1,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-    <a href="index3.html" class="brand-link">
-        <img src="img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">School LMS</span>
+    <a href="{{ route('admin.dashboard') }}" class="brand-link">
+        <i class="fa-solid fa-school brand-image img-circle elevation-3 mt-2" style="opacity: 1"></i>
+        {{-- <img src="img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
+        <span class="brand-text font-weight-light text-uppercase">School <strong>LMS</strong> </span>
     </a>
 
     <div class="sidebar">
@@ -65,6 +66,33 @@
                                 <p>uPlot</p>
                             </a>
                         </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+
+                        <i class="nav-icon fa-regular fa-calendar-days"></i>
+                        <p>
+                            Academic Year
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="{{ route('academic-year.create') }}" class="nav-link">
+                                <i class="nav-icon fa-regular fa-calendar-plus"></i>
+                                <p>Add Record</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('academic-year.read') }}" class="nav-link">
+                                <i class="nav-icon fa-regular fa-rectangle-list"></i>
+                                <p>Show Academic Year List</p>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
 

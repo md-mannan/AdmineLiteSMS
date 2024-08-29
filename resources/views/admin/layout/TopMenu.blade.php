@@ -126,9 +126,8 @@
              </a>
          </li>
          <li class="nav-item">
-             <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#"
-                 role="button">
-                 <i class="fas fa-th-large"></i>
+             <a class="nav-link text text-danger " href="{{ route('admin.logout') }}" role="button">
+                 <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i>
              </a>
          </li>
      </ul>
