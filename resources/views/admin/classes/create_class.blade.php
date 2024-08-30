@@ -10,12 +10,14 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Create Class</h1>
+                        <h1>Classes</h1>
                     </div>
                     <div class="col-sm-6">
+
                         <ol class="breadcrumb float-sm-right">
+                            <a href="{{ route('class.read') }}" class="btn btn-primary btn-sm mr-5">Back</a>
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Classes</li>
+                            <li class="breadcrumb-item active">Add</li>
                         </ol>
                     </div>
                 </div>
@@ -30,7 +32,7 @@
 
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Create new Class</h3>
+                                <h3 class="card-title">Create New Class</h3>
                             </div>
 
 

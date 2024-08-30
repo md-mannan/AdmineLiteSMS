@@ -10,12 +10,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Update Academic</h1>
+                        <h1>Academic Year</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
+                            <a href="{{ route('academic-year.read') }}" class="btn btn-primary btn-sm mr-5">Back</a>
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Update Academic Year</li>
+                            <li class="breadcrumb-item active">Update</li>
                         </ol>
                     </div>
                 </div>

@@ -54,7 +54,7 @@ class AcademicYearController extends Controller
     public function delete(Request $request)
     {
         $data = AcademicYear::find($request->id);
-        // $data->delete();
+
         if ($data && $data->delete()) {
             return redirect()->route('academic-year.read')->with('success', 'Academic Year Deleted successfully');
         } else {

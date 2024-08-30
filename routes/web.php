@@ -3,12 +3,10 @@
 use App\Http\Controllers\AcademicYearController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\FeeHeadController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::redirect('/', 'admin/login');
 
 Route::group(['prefix' => 'admin'], function () {
 
@@ -40,5 +38,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('class/edit', [ClassesController::class, 'edit'])->name('class.edit');
         Route::put('class/update', [ClassesController::class, 'update'])->name('class.update');
         Route::get('class/delete', [ClassesController::class, 'delete'])->name('class.delete');
+
+        // Fee Head Module
+
+        Route::get('fee-head/read', [FeeHeadController::class, 'read'])->name('fee-head.read');
+        Route::get('fee-head/create', [FeeHeadController::class, 'index'])->name('fee-head.create');
+        Route::post('fee-head/create', [FeeHeadController::class, 'store'])->name('fee-head.store');
+        Route::get('fee-head/edit', [FeeHeadController::class, 'edit'])->name('fee-head.edit');
+        Route::put('fee-head/update', [FeeHeadController::class, 'update'])->name('fee-head.update');
+        Route::get('fee-head/delete', [FeeHeadController::class, 'delete'])->name('fee-head.delete');
     });
 });

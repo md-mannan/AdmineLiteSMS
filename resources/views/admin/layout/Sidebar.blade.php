@@ -122,6 +122,33 @@
                     </ul>
                 </li>
 
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+
+                        <i class="nav-icon fa-solid fa-receipt"></i>
+                        <p>
+                            Fee Head
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="{{ route('fee-head.create') }}" class="nav-link">
+                                <i class="nav-icon fa-regular fa-calendar-plus"></i>
+                                <p>Add Fees Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('fee-head.read') }}" class="nav-link">
+                                <i class="nav-icon fa-regular fa-rectangle-list"></i>
+                                <p>Fees Category List</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
             </ul>
         </nav>
 

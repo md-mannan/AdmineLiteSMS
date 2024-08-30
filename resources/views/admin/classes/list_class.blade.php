@@ -19,6 +19,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
+                            <a href="{{ route('class.create') }}" class="btn btn-primary btn-sm mr-5">Add</a>
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
                             <li class="breadcrumb-item active">Class List</li>
                         </ol>

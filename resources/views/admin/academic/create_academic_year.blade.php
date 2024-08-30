@@ -10,12 +10,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Create Academic Year</h1>
+                        <h1>Academic Year</h1>
                     </div>
                     <div class="col-sm-6">
+                        <a href="{{ route('academic-year.read') }}" class="btn btn-primary btn-sm mr-5">Back</a>
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Academic Year</li>
+                            <li class="breadcrumb-item active">Add</li>
                         </ol>
                     </div>
                 </div>
@@ -30,7 +31,7 @@
 
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Create New Academic Year</h3>
+                                <h3 class="card-title">Add New Academic Year</h3>
                             </div>
 
 

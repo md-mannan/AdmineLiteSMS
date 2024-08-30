@@ -126,7 +126,8 @@
              </a>
          </li>
          <li class="nav-item">
-             <a class="nav-link text text-danger " href="{{ route('admin.logout') }}" role="button">
+             <a class="nav-link text text-danger " style="font-size:25px" href="{{ route('admin.logout') }}"
+                 role="button">
                  <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i>
              </a>
          </li>

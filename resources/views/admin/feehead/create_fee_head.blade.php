@@ -1,5 +1,5 @@
 @extends('admin.layout.Master')
-@section('title', 'Class | Update')
+@section('title', 'Academic Year || Create')
 @section('CustomCSS')
 
 @endsection
@@ -10,13 +10,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Classes</h1>
+                        <h1>Fee Head</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <a href="{{ route('class.read') }}" class="btn btn-primary btn-sm mr-5">Back</a>
+                            <a href="{{ route('fee-head.read') }}" class="btn btn-primary btn-sm mr-5">Back</a>
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Update Class</li>
+                            <li class="breadcrumb-item active">Fee Head</li>
                         </ol>
                     </div>
                 </div>
@@ -31,15 +31,13 @@
 
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Update Class</h3>
+                                <h3 class="card-title">Create New Fees Category</h3>
                             </div>
 
 
-                            <form action="{{ route('class.update') }}" method="POST">
+                            <form action="{{ route('fee-head.store') }}" method="POST">
                                 @csrf
-                                @method('PUT')
                                 <div class="card-body">
-                                    <input type="hidden" name='id' value="{{ $data->id }}">
                                     <div class="form-group">
                                         @if (Session::has('success'))
                                             <div class="alert alert-success">{{ Session::get('success') }}</div>
@@ -47,9 +45,9 @@
                                         @if (Session::has('error'))
                                             <div class="alert alert-danger">{{ Session::get('error') }}</div>
                                         @endif
-                                        <label for="exampleInputEmail1">Class Name</label>
+                                        <label for="exampleInputEmail1">Fee Category Name</label>
                                         <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="Enter Academic Year" value="{{ $data->name }}">
+                                            placeholder="Enter Fees Category Name">
                                     </div>
 
 
@@ -58,29 +56,10 @@
                                     @enderror ()
 
 
-                                    <div class="form-group">
-
-                                        <label for="exampleInputEmail1">Academic Year</label>
-                                        <select class="form-control select2bs4 select2-hidden-accessible"
-                                            style="width: 100%;" data-select2-id="17" tabindex="-1" aria-hidden="true"
-                                            name="started_from">
-
-                                            @foreach ($academic_year as $id => $name)
-                                                <option value="{{ $id }}">
-                                                    {{ $name }}</option>
-                                            @endforeach
-
-                                        </select>
-                                    </div>
-                                    @error('started_from')
-                                        <p class="text-danger"> {{ $message }}</p>
-                                    @enderror ()
-
                                 </div>
 
-
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Create</button>
                                 </div>
                             </form>
                         </div>
