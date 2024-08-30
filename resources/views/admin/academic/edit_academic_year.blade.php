@@ -48,7 +48,7 @@
                                         @endif
                                         <label for="exampleInputEmail1">Academic Year Name</label>
                                         <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="Enter Academic Year" value="{{ $data->name }}">
+                                            placeholder="Enter Class Name" value="{{ $data->name }}">
                                     </div>
 
 

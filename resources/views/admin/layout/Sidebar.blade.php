@@ -89,7 +89,33 @@
                         <li class="nav-item">
                             <a href="{{ route('academic-year.read') }}" class="nav-link">
                                 <i class="nav-icon fa-regular fa-rectangle-list"></i>
-                                <p>Show Academic Year List</p>
+                                <p>Show Year</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+
+                        <i class="nav-icon fa-solid fa-landmark"></i>
+                        <p>
+                            Classes
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="{{ route('class.create') }}" class="nav-link">
+                                <i class="nav-icon fa-regular fa-calendar-plus"></i>
+                                <p>Add Class</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('class.read') }}" class="nav-link">
+                                <i class="nav-icon fa-regular fa-rectangle-list"></i>
+                                <p>Show Class</p>
                             </a>
                         </li>
 

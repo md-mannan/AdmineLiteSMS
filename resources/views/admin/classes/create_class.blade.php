@@ -1,5 +1,5 @@
 @extends('admin.layout.Master')
-@section('title', 'Academic Year || Create')
+@section('title', 'Class | Create')
 @section('CustomCSS')
 
 @endsection
@@ -10,12 +10,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Create Academic Year</h1>
+                        <h1>Create Class</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Academic Year</li>
+                            <li class="breadcrumb-item active">Classes</li>
                         </ol>
                     </div>
                 </div>
@@ -30,11 +30,11 @@
 
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Create New Academic Year</h3>
+                                <h3 class="card-title">Create new Class</h3>
                             </div>
 
 
-                            <form action="{{ route('academic-year.store') }}" method="POST">
+                            <form action="{{ route('class.store') }}" method="POST">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
@@ -44,13 +44,31 @@
                                         @if (Session::has('error'))
                                             <div class="alert alert-danger">{{ Session::get('error') }}</div>
                                         @endif
-                                        <label for="exampleInputEmail1">Academic Year Name</label>
+                                        <label for="exampleInputEmail1">Class Name</label>
                                         <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="Enter Academic Year">
+                                            placeholder="Enter Class Name">
+                                    </div>
+                                    @error('name')
+                                        <p class="text-danger"> {{ $message }}</p>
+                                    @enderror ()
+                                    <div class="form-group">
+
+                                        <label for="exampleInputEmail1">Academic Year</label>
+                                        <select class="form-control select2bs4 select2-hidden-accessible"
+                                            style="width: 100%;" data-select2-id="17" tabindex="-1" aria-hidden="true"
+                                            name="started_from">
+                                            <option selected="selected">Select Academic Year</option>
+                                            @foreach ($academic_year as $id => $name)
+                                                <option value="{{ $id }}">
+                                                    {{ $name }}</option>
+                                            @endforeach
+
+                                        </select>
                                     </div>
 
 
-                                    @error('name')
+
+                                    @error('started_from')
                                         <p class="text-danger"> {{ $message }}</p>
                                     @enderror ()
 

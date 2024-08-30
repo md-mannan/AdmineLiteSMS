@@ -35,7 +35,7 @@
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
-                <form action="{{ route('admin.authenticate') }}" method="post">
+                <form action="{{ route('admin.authenticate') }}" method="post" autocomplete="off">
                     @csrf
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email" name="email">

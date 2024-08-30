@@ -15,12 +15,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>List Academic Years</h1>
+                        <h1>Available Class List </h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Academic Year List</li>
+                            <li class="breadcrumb-item active">Class List</li>
                         </ol>
                     </div>
                 </div>
@@ -70,6 +70,7 @@
                                             <tr>
                                                 <th>ID#</th>
                                                 <th>Name</th>
+                                                <th>Started</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -78,21 +79,22 @@
                                                 <tr>
                                                     <td>{{ $item->id }}</td>
                                                     <td>{{ $item->name }}</td>
+                                                    <td>{{ $item->academic_year->name }}</td>
                                                     <td>
                                                         <div class="btn-group" role="group">
 
-                                                            <form action="{{ route('academic-year.edit') }}" method="POST">
+                                                            <form action="{{ route('class.edit') }}" method="POST">
                                                                 @csrf
                                                                 @method('GET')
                                                                 <input type="hidden" name="id"
                                                                     value="{{ $item->id }}">
                                                                 <button type="submit" class="btn btn-primary"
-                                                                    style="border-radius: .25rem 0rem .0rem .25rem;"><i
+                                                                    style="border-radius: .25rem 0rem 0rem .25rem;"><i
                                                                         class="fa-solid fa-pen-to-square"></i>Edit</button>
                                                             </form>
 
-                                                            <form action="{{ route('academic-year.delete') }}"
-                                                                method="POST" style="display: inline" id="formdelete">
+                                                            <form action="{{ route('class.delete') }}" method="POST"
+                                                                style="display: inline" id="formdelete">
                                                                 @csrf
                                                                 @method('GET')
                                                                 <input type="hidden" name="id"
@@ -116,7 +118,7 @@
                                         {{ $data->links() }}
                                     </div>
                                 @else
-                                    <h2 class="alert border-warning">No Academic Year data available in table</h2>
+                                    <h2 class="alert border-warning">No Class data available in table</h2>
                                 @endif
 
                             </div>

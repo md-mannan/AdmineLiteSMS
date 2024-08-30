@@ -45,8 +45,8 @@ class AdminController extends Controller
     {
         $user = new User();
         $user->name = 'Ashik Hossain';
-        $user->role = 'student';
-        $user->email = 'ashik@gmail.com';
+        $user->role = 'admin';
+        $user->email = 'admin@gmail.com';
         $user->password = Hash::make('admin');
         $user->save();
         if ($user->save()) {
