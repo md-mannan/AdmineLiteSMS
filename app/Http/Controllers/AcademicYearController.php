@@ -8,14 +8,14 @@ use Illuminate\View\View;
 
 class AcademicYearController extends Controller
 {
-    public function index()
+    public function create()
     {
         return view('admin.academic.create_academic_year');
     }
-    public function read(): View
+    public function index(): View
     {
         $data = AcademicYear::paginate(10);
-        return view('admin.academic.list_academic_year', compact('data'));
+        return view('admin.academic.index_academic_year', compact('data'));
     }
 
     public function store(Request $request)
@@ -27,9 +27,9 @@ class AcademicYearController extends Controller
         $data->name = $request->name;
         $data->save();
         if ($data->save()) {
-            return redirect()->route('academic-year.read')->with('success', 'Academic Year created successfully');
+            return redirect()->route('academic-year.index')->with('success', 'Academic Year created successfully');
         } else {
-            return redirect()->route('academic-year.read')->with('error', 'Academic Year Create Failed');
+            return redirect()->route('academic-year.index')->with('error', 'Academic Year Create Failed');
         }
     }
     public function edit(Request $request)
@@ -46,9 +46,9 @@ class AcademicYearController extends Controller
         $data->name = $request->name;
         $data->update();
         if ($data->update()) {
-            return redirect()->route('academic-year.read')->with('success', 'Academic Year Updated successfully');
+            return redirect()->route('academic-year.index')->with('success', 'Academic Year Updated successfully');
         } else {
-            return redirect()->route('academic-year.read')->with('error', 'Academic Year Update Failed');
+            return redirect()->route('academic-year.index')->with('error', 'Academic Year Update Failed');
         }
     }
     public function delete(Request $request)
@@ -56,9 +56,9 @@ class AcademicYearController extends Controller
         $data = AcademicYear::find($request->id);
 
         if ($data && $data->delete()) {
-            return redirect()->route('academic-year.read')->with('success', 'Academic Year Deleted successfully');
+            return redirect()->route('academic-year.index')->with('success', 'Academic Year Deleted successfully');
         } else {
-            return redirect()->route('academic-year.read')->with('error', 'Academic Year Delete Failed');
+            return redirect()->route('academic-year.index')->with('error', 'Academic Year Delete Failed');
         }
     }
 }

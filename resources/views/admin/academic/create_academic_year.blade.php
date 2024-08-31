@@ -13,8 +13,9 @@
                         <h1>Academic Year</h1>
                     </div>
                     <div class="col-sm-6">
-                        <a href="{{ route('academic-year.read') }}" class="btn btn-primary btn-sm mr-5">Back</a>
+
                         <ol class="breadcrumb float-sm-right">
+                            <a href="{{ route('academic-year.index') }}" class="btn btn-primary btn-sm mr-5">Back</a>
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
                             <li class="breadcrumb-item active">Add</li>
                         </ol>
@@ -39,12 +40,7 @@
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
-                                        @if (Session::has('success'))
-                                            <div class="alert alert-success">{{ Session::get('success') }}</div>
-                                        @endif
-                                        @if (Session::has('error'))
-                                            <div class="alert alert-danger">{{ Session::get('error') }}</div>
-                                        @endif
+
                                         <label for="exampleInputEmail1">Academic Year Name</label>
                                         <input type="text" class="form-control" id="name" name="name"
                                             placeholder="Enter Academic Year">

@@ -9,7 +9,7 @@ use App\Models\AcademicYear;
 
 class ClassesController extends Controller
 {
-    public function index()
+    public function create()
     {
         $academic_year = AcademicYear::pluck('name', 'id');
 
@@ -18,11 +18,11 @@ class ClassesController extends Controller
             compact('academic_year')
         );
     }
-    public function read()
+    public function index()
     {
 
         $data = Classes::paginate(10);
-        return view('admin.classes.list_class', compact('data'));
+        return view('admin.classes.index_class', compact('data'));
     }
     public function store(Request $request)
     {
@@ -30,14 +30,14 @@ class ClassesController extends Controller
             'name' => 'required',
             'started_from' => 'required',
         ]);
-        $data = new Classes();
+        $data = new Classes;
 
         $data->name = $request->name;
         $data->started_from = $request->started_from;
         if ($data->save()) {
-            return redirect()->route('class.read')->with('success', 'Class Created successfully');
+            return redirect()->route('class.index')->with('success', 'Class Created successfully');
         } else {
-            return redirect()->route('class.read')->with('error', 'Class Create Failed');
+            return redirect()->route('class.index')->with('error', 'Class Create Failed');
         }
     }
     public function edit(Request $request)
@@ -46,7 +46,7 @@ class ClassesController extends Controller
         $academic_year = AcademicYear::pluck('name', 'id');
         $data = Classes::find($request->id);
         if (!$data) {
-            return redirect()->route('class.read')->with('error', 'Class not found');
+            return redirect()->route('class.index')->with('error', 'Class not found');
         }
         return view('admin.classes.edit_class', compact('data', 'academic_year'));
     }
@@ -58,26 +58,26 @@ class ClassesController extends Controller
         ]);
         $data = Classes::find($request->id);
         if (!$data) {
-            return redirect()->route('class.read')->with('error', 'Class not found');
+            return redirect()->route('class.index')->with('error', 'Class not found');
         }
         $data->name = $request->name;
         $data->started_from = $request->started_from;
         if ($data->update()) {
-            return redirect()->route('class.read')->with('success', 'Class updated successfully');
+            return redirect()->route('class.index')->with('success', 'Class updated successfully');
         } else {
-            return redirect()->route('class.read')->with('error', 'Class Update Failed');
+            return redirect()->route('class.index')->with('error', 'Class Update Failed');
         }
     }
     public function delete(Request $request)
     {
         $data = Classes::find($request->id);
         if (!$data) {
-            return redirect()->route('class.read')->with('error', 'Class not found');
+            return redirect()->route('class.index')->with('error', 'Class not found');
         }
         if ($data->delete()) {
-            return redirect()->route('class.read')->with('success', 'Class deleted successfully');
+            return redirect()->route('class.index')->with('success', 'Class deleted successfully');
         } else {
-            return redirect()->route('class.read')->with('error', 'Class Delete Failed');
+            return redirect()->route('class.index')->with('error', 'Class Delete Failed');
         }
     }
 }

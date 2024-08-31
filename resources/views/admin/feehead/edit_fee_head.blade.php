@@ -14,7 +14,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <a href="{{ route('fee-head.read') }}" class="btn btn-primary btn-sm mr-5">Back</a>
+                            <a href="{{ route('fee-head.index') }}" class="btn btn-primary btn-sm mr-5">Back</a>
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
                             <li class="breadcrumb-item active">Fee Head</li>
                         </ol>
@@ -41,12 +41,7 @@
                                 <div class="card-body">
                                     <input type="hidden" name='id' value="{{ $data->id }}">
                                     <div class="form-group">
-                                        @if (Session::has('success'))
-                                            <div class="alert alert-success">{{ Session::get('success') }}</div>
-                                        @endif
-                                        @if (Session::has('error'))
-                                            <div class="alert alert-danger">{{ Session::get('error') }}</div>
-                                        @endif
+
                                         <label for="exampleInputEmail1">Fee Category</label>
                                         <input type="text" class="form-control" id="name" name="name"
                                             placeholder="Enter Fees Category Name" value="{{ $data->name }}">

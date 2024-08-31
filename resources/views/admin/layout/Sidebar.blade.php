@@ -87,7 +87,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('academic-year.read') }}" class="nav-link">
+                            <a href="{{ route('academic-year.index') }}" class="nav-link">
                                 <i class="nav-icon fa-regular fa-rectangle-list"></i>
                                 <p>Show Year</p>
                             </a>
@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('class.read') }}" class="nav-link">
+                            <a href="{{ route('class.index') }}" class="nav-link">
                                 <i class="nav-icon fa-regular fa-rectangle-list"></i>
                                 <p>Show Class</p>
                             </a>
@@ -140,7 +140,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('fee-head.read') }}" class="nav-link">
+                            <a href="{{ route('fee-head.index') }}" class="nav-link">
                                 <i class="nav-icon fa-regular fa-rectangle-list"></i>
                                 <p>Fees Category List</p>
                             </a>
@@ -148,6 +148,35 @@
 
                     </ul>
                 </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+
+                        <i class="nav-icon fa-solid fa-folder-tree"></i>
+                        <p>
+                            Fee Structures
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="{{ route('fee-structure.create') }}" class="nav-link">
+                                <i class="nav-icon fa-regular fa-calendar-plus"></i>
+                                <p>Add Fee Structure</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('fee-structure.index') }}" class="nav-link">
+                                <i class="nav-icon fa-regular fa-rectangle-list"></i>
+                                <p>Fees Structures List</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
 
             </ul>
         </nav>

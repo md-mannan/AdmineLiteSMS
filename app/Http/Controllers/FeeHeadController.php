@@ -8,16 +8,16 @@ use Illuminate\Http\Request;
 class FeeHeadController extends Controller
 {
 
-    public function index()
+    public function create()
     {
         return view('admin.feehead.create_fee_head');
     }
 
 
-    public function read()
+    public function index()
     {
         $data = FeeHead::paginate(10);
-        return view('admin.feehead.list_fee_head', compact('data'));
+        return view('admin.feehead.index_fee_head', compact('data'));
     }
 
 
@@ -26,13 +26,13 @@ class FeeHeadController extends Controller
         $request->validate([
             'name' => 'required',
         ]);
-        $data = new FeeHead();
+        $data = new FeeHead;
         $data->name = $request->name;
         $data->save();
         if ($data->save()) {
-            return redirect()->route('fee-head.read')->with('success', 'Fee Head created successfully');
+            return redirect()->route('fee-head.index')->with('success', 'Fee Head created successfully');
         } else {
-            return redirect()->route('fee-head.read')->with('error', 'Fee Head Create Failed');
+            return redirect()->route('fee-head.index')->with('error', 'Fee Head Create Failed');
         }
     }
 
@@ -54,9 +54,9 @@ class FeeHeadController extends Controller
         $data->name = $request->name;
         $data->update();
         if ($data->update()) {
-            return redirect()->route('fee-head.read')->with('success', 'Fee Head Updated successfully');
+            return redirect()->route('fee-head.index')->with('success', 'Fee Head Updated successfully');
         } else {
-            return redirect()->route('fee-head.read')->with('error', 'Fee Head Update Failed');
+            return redirect()->route('fee-head.index')->with('error', 'Fee Head Update Failed');
         }
     }
 
@@ -65,9 +65,9 @@ class FeeHeadController extends Controller
         $data = FeeHead::find($request->id);
 
         if ($data && $data->delete()) {
-            return redirect()->route('fee-head.read')->with('success', 'Fee Category Deleted successfully');
+            return redirect()->route('fee-head.index')->with('success', 'Fee Category Deleted successfully');
         } else {
-            return redirect()->route('fee-head.read')->with('error', 'Fee Category Delete Failed');
+            return redirect()->route('fee-head.index')->with('error', 'Fee Category Delete Failed');
         }
     }
 }

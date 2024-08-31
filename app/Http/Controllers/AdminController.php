@@ -43,7 +43,7 @@ class AdminController extends Controller
     }
     public function register()
     {
-        $user = new User();
+        $user = new User;
         $user->name = 'Ashik Hossain';
         $user->role = 'admin';
         $user->email = 'admin@gmail.com';
